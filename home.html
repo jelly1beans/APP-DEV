@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="theme-color" content="#8d448d">
+        <title>StudyNest</title>
+        <link rel="stylesheet" href="home.css" />
+        <link rel="manifest" href="/manifest.json">
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>StudyNest</h1>
+                <div class="help-icon">?</div>
+            </div>
+            
+            <h2 class="welcome">Welcome, <span id="userName">Guest</span></h2>
+            <p class="subtitle">Ready to continue your study journey?</p>
+            
+            <div class="stats">
+                <div class="stat-card purple">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">NOTES</div>
+                </div>
+                <div class="stat-card yellow">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">QUIZ</div>
+                </div>
+                <div class="stat-card orange">
+                    <div class="stat-number">55%</div>
+                    <div class="stat-label">PROG.</div>
+                </div>
+            </div>
+            
+            <div class="buttons">
+                <button class="btn btn-blue" onclick="location.href='notes.html'"><span class="btn-icon">✏️</span>TAKE NOTE</button>
+                <button class="btn btn-orange" onclick="location.href='quiz.html'"><span class="btn-icon">🧠</span>START QUIZ</button>
+                <button class="btn btn-purple" onclick="location.href='progress.html'"><span class="btn-icon">📊</span>VIEW PROGRESS</button>
+            </div>
+            
+            <div class="nav-bar">
+                <div class="nav-icon active" onclick="location.href='home.html'"><i class="fa fa-home" style="color: #ff9800 "></i></div>
+                <div class="nav-icon" onclick="location.href='notes.html'"><i class="fa fa-book" style="color: #9c27b0 "></i></div>
+                <div class="nav-icon" onclick="location.href='quiz.html'"><i class="fa fa-clock-o" style="color: #ffc107 "></i></div>
+                <div class="nav-icon" onclick="location.href='profile.html'"><i class="fa fa-user" style="color: #03a9f4 "></i></div>
+            </div>
+        </div>
+        <script>
+            const userName = localStorage.getItem('userName') || 'Guest';
+            document.getElementById('userName').textContent = userName;
+        </script>
+    </body>
+</html>

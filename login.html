@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login - StudyNest</title>
+        <link rel="stylesheet" href="login.css" />
+        <link rel="manifest" href="/manifest.json">
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Welcome<br>Back!</h1>
+            </div>
+            
+            <form class="login-form" onsubmit="event.preventDefault(); navigate('home.html')">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn-login">LOGIN</button>
+            </form>
+            
+            <p class="switch-text">Don't have an account? <span onclick="location.href='signup.html'">Sign Up</span></p>
+        </div>
+        <script>
+            if('serviceWorker' in navigator){
+                navigator.serviceWorker.register('../service-worker.js');
+            }
+            
+            document.querySelector('.login-form').onsubmit = function(e) {
+                e.preventDefault();
+                location.href = 'home.html';
+            };
+        </script>
+    </body>
+</html>

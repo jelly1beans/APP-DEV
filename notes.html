@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="theme-color" content="#8d448d">
+        <title>Notes - StudyNest</title>
+        <link rel="stylesheet" href="notes.css" />
+        <link rel="manifest" href="/manifest.json">
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h1>Notes</h1>
+                <div class="help-icon">?</div>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" placeholder="Search">
+                <div class="search-icon">🔍</div>
+            </div>
+            
+            <div class="notes-list">
+                <div class="note-card yellow">
+                    <div class="note-title">COMPUTER PROGRAMMING 1</div>
+                    <div class="note-subtitle">CHAPTER 1 - FUNDAMENTALS</div>
+                </div>
+                
+                <div class="note-card purple">
+                    <div class="note-title">HUMAN COMPUTER INTERACTION</div>
+                    <div class="note-subtitle">CHAPTER 2 - DESIGN THINKING</div>
+                </div>
+                
+                <div class="note-card orange">
+                    <div class="note-title">OBJECT ORIENTATION PROGRAMMING</div>
+                    <div class="note-subtitle">CHAPTER 4 - 4 PILLARS OF OOP</div>
+                </div>
+            </div>
+            
+            <button class="btn-new">NEW NOTES</button>
+            
+            <div class="nav-bar">
+                <div class="nav-icon" onclick="location.href='home.html'"><i class="fa fa-home" style="color: #ff9800 "></i></div>
+                <div class="nav-icon active" onclick="location.href='notes.html'"><i class="fa fa-book" style="color: #9c27b0 "></i></div>
+                <div class="nav-icon" onclick="location.href='quiz.html'"><i class="fa fa-clock-o" style="color: #ffc107 "></i></div>
+                <div class="nav-icon" onclick="location.href='profile.html'"><i class="fa fa-user" style="color: #03a9f4 "></i></div>
+            </div>
+        </div>
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker.register('/service-worker.js');
+            }
+        </script>
+
+    </body>
+</html>
