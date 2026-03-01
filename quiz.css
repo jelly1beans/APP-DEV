@@ -137,6 +137,9 @@ body {
     letter-spacing: 1px;
     margin-bottom: 35px;
     border: solid rgb(255, 255, 255) 2.5px;
+    transition: transform 0.2s;
+    position: relative;
+    z-index: 1;
 }
 .btn-create:hover{
     transform: scale(1.05);
