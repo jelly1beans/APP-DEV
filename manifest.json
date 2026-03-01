@@ -1,19 +1,19 @@
 {
-  "name": "Study Nest",
-  "short_name": "Study Nest",
-  "start_url": "pages/signup.html",
+  "name": "App Dev System",
+  "short_name": "StudyNest",
+  "start_url": "/signup.html",
   "display": "standalone",
-  "background_color": "#8d448d",
-  "theme_color": "#8d448d",
-  "description": "A simple study application",
+  "background_color": "#f5f5f5",
+  "theme_color": "#f5f5f5",
+  "orientation": "portrait",
   "icons": [
     {
-      "src": "icon-192.png",
+      "src": "/icon-192.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "icon-512.png",
+      "src": "/icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }

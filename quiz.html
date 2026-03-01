@@ -23,12 +23,12 @@
                 <div class="subject-card orange">HISTORY</div>
             </div>
             
-            <div class="quiz-list">
+            <div class="quiz-list" id="quizList">
                 <div class="quiz-card purple">BIOLOGY: Chapter 4 (No. 7)</div>
                 <div class="quiz-card blue">Chemistry: Chapter 5 (No. 13)</div>
             </div>
             
-            <button class="btn-create">CREATE QUIZ</button>
+            <button class="btn-create" onclick="createQuiz()">CREATE QUIZ</button>
             
            <div class="nav-bar">
                 <div class="nav-icon" onclick="location.href='home.html'"><i class="fa fa-home" style="color: #ff9800 "></i></div>
@@ -44,6 +44,36 @@ if ("serviceWorker" in navigator) {
     .then(() => console.log("Service Worker Registered"))
     .catch(err => console.log("SW registration failed:", err));
 }
+
+function createQuiz() {
+    const subject = prompt("Enter subject (e.g., MATH, SCIENCE):");
+    const topic = prompt("Enter topic (e.g., Chapter 1):");
+    if(subject && topic) {
+        const quizList = document.getElementById('quizList');
+        const colors = ['blue', 'purple', 'yellow', 'orange'];
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const quizCount = quizList.children.length + 1;
+        const newQuiz = document.createElement('div');
+        newQuiz.className = `quiz-card ${color}`;
+        newQuiz.textContent = `${subject.toUpperCase()}: ${topic} (No. ${quizCount})`;
+        quizList.appendChild(newQuiz);
+        
+        const quizzes = JSON.parse(localStorage.getItem('quizzes') || '[]');
+        quizzes.push({subject, topic, color, number: quizCount});
+        localStorage.setItem('quizzes', JSON.stringify(quizzes));
+    }
+}
+
+window.onload = function() {
+    const quizzes = JSON.parse(localStorage.getItem('quizzes') || '[]');
+    const quizList = document.getElementById('quizList');
+    quizzes.forEach(quiz => {
+        const newQuiz = document.createElement('div');
+        newQuiz.className = `quiz-card ${quiz.color}`;
+        newQuiz.textContent = `${quiz.subject.toUpperCase()}: ${quiz.topic} (No. ${quiz.number})`;
+        quizList.appendChild(newQuiz);
+    });
+};
 </script>
     </body>
 </html>
