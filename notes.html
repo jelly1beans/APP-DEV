@@ -47,11 +47,12 @@
                 <div class="nav-icon" onclick="location.href='profile.html'"><i class="fa fa-user" style="color: #03a9f4 "></i></div>
             </div>
         </div>
-        <script>
-            if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('/service-worker.js');
-            }
-        </script>
-
+       <script>
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker.register("/service-worker.js")
+    .then(() => console.log("Service Worker Registered"))
+    .catch(err => console.log("SW registration failed:", err));
+}
+</script>
     </body>
 </html>
